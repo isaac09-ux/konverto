@@ -1,11 +1,13 @@
-const CACHE_NAME = 'konverto-v2';
+const CACHE_NAME = 'konverto-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/css/styles.css',
+  '/js/main.js',
   '/manifest.webmanifest',
   '/favicon.svg',
   '/og-image.svg',
-  '/klara.jpg'
+  '/img/klara.jpg'
 ];
 
 self.addEventListener('install', event => {
