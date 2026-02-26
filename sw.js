@@ -1,10 +1,11 @@
-const CACHE_NAME = 'konverto-v1';
+const CACHE_NAME = 'konverto-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
   '/favicon.svg',
-  '/og-image.svg'
+  '/og-image.svg',
+  '/klara.jpg'
 ];
 
 self.addEventListener('install', event => {
@@ -28,19 +29,16 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
+  // Network-first strategy: try network, fallback to cache
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
-
-      return fetch(event.request)
-        .then(response => {
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseClone);
-          });
-          return response;
-        })
-        .catch(() => caches.match('/index.html'));
-    })
+    fetch(event.request)
+      .then(response => {
+        const responseClone = response.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, responseClone);
+        });
+        return response;
+      })
+      .catch(() => caches.match(event.request).then(cached => cached || caches.match('/index.html')))
   );
 });
