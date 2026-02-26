@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Silueta oscura con iluminación verde neón">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00141a"/>
+      <stop offset="100%" stop-color="#020607"/>
+    </linearGradient>
+    <radialGradient id="neon" cx="52%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#1cff72"/>
+      <stop offset="45%" stop-color="#10d85f"/>
+      <stop offset="100%" stop-color="#0a1110" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <ellipse cx="640" cy="400" rx="315" ry="210" fill="url(#neon)" filter="url(#glow)"/>
+
+  <!-- Silueta estilizada -->
+  <path d="M535 228c35 4 58 28 62 62 4 32-12 59-39 78-8 6-14 15-17 26l-17 60c-5 17-18 29-35 34l-44 13c-14 4-25 15-29 29l-44 166c-8 31-37 52-69 49-24-2-45-18-54-41-9-24-4-50 14-69l72-76c9-10 14-23 13-36-3-45 3-94 27-134 28-48 90-96 160-96z" fill="#010304"/>
+  <path d="M566 350c17 0 30 13 30 30v14c0 17-13 30-30 30s-30-13-30-30v-14c0-17 13-30 30-30z" fill="#010304"/>
+  <path d="M595 387c12-3 26-1 37 7l68 50c23 17 54 19 79 5l116-62c29-16 66-7 84 20 17 26 12 61-12 81l-113 94c-20 17-48 20-71 9l-66-32c-9-5-20-5-30-1l-83 32c-33 13-70-4-83-36-13-33 4-70 36-83l38-15z" fill="#010304"/>
+  <path d="M801 316c-7-24 6-50 30-60 23-10 50-2 64 19l31 47c14 21 10 50-10 66-22 18-54 16-72-5l-35-40c-8-8-12-17-8-27z" fill="#010304"/>
+</svg>
