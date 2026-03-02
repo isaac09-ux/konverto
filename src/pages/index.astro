@@ -33,7 +33,7 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-<script type="application/ld+json">
+<script type="application/ld+json" is:inline>
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -1394,12 +1394,12 @@ footer {
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problema" onclick="closeMenu()">El problema</a>
-  <a href="#resultados" onclick="closeMenu()">Resultados</a>
-  <a href="#proceso" onclick="closeMenu()">Proceso</a>
-  <a href="#precios" onclick="closeMenu()">Precios</a>
-  <a href="#faq" onclick="closeMenu()">Preguntas</a>
-  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="nav-cta" onclick="closeMenu()">Prueba gratis →</a>
+  <a href="#problema" onclick="window.closeMenu()">El problema</a>
+  <a href="#resultados" onclick="window.closeMenu()">Resultados</a>
+  <a href="#proceso" onclick="window.closeMenu()">Proceso</a>
+  <a href="#precios" onclick="window.closeMenu()">Precios</a>
+  <a href="#faq" onclick="window.closeMenu()">Preguntas</a>
+  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="nav-cta" onclick="window.closeMenu()">Prueba gratis →</a>
 </div>
 
 <!-- NAV -->
@@ -1911,33 +1911,37 @@ footer {
 
 <script>
 // CURSOR
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
+const cursor = document.getElementById('cursor') as HTMLElement | null;
+const ring = document.getElementById('cursorRing') as HTMLElement | null;
 let mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx - 5 + 'px';
-  cursor.style.top  = my - 5 + 'px';
+  if (cursor) {
+    cursor.style.left = mx - 5 + 'px';
+    cursor.style.top  = my - 5 + 'px';
+  }
 });
 
 function animateRing() {
   rx += (mx - rx - 18) * 0.12;
   ry += (my - ry - 18) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
+  if (ring) {
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+  }
   requestAnimationFrame(animateRing);
 }
 animateRing();
 
 document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'scale(2.5)';
-    ring.style.width = '56px'; ring.style.height = '56px';
+    if (cursor) cursor.style.transform = 'scale(2.5)';
+    if (ring) { ring.style.width = '56px'; ring.style.height = '56px'; }
   });
   el.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'scale(1)';
-    ring.style.width = '36px'; ring.style.height = '36px';
+    if (cursor) cursor.style.transform = 'scale(1)';
+    if (ring) { ring.style.width = '36px'; ring.style.height = '36px'; }
   });
 });
 
@@ -1945,26 +1949,27 @@ document.querySelectorAll('a, button').forEach(el => {
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', () => {
+hamburger?.addEventListener('click', () => {
   hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  mobileMenu?.classList.toggle('active');
+  document.body.style.overflow = mobileMenu?.classList.contains('active') ? 'hidden' : '';
 });
 
 function closeMenu() {
-  hamburger.classList.remove('active');
-  mobileMenu.classList.remove('active');
+  hamburger?.classList.remove('active');
+  mobileMenu?.classList.remove('active');
   document.body.style.overflow = '';
 }
+// Expose to inline onclick handlers
+(window as any).closeMenu = closeMenu;
 
 // FAQ ACCORDION
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
+    if (!item) return;
     const wasActive = item.classList.contains('active');
-    // Close all
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    // Toggle clicked
     if (!wasActive) item.classList.add('active');
   });
 });
@@ -1978,9 +1983,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-      // no-op: evita romper la experiencia si SW falla
-    });
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
   });
 }
 </script>
