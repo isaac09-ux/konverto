@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://konverto.vercel.app/</loc>
+    <loc>https://konverto-alpha.vercel.app/</loc>
     <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://konverto.vercel.app/og-image.svg</image:loc>
+      <image:loc>https://konverto-alpha.vercel.app/og-image.svg</image:loc>
       <image:title>KONVERTO - Copywriting para Facebook e Instagram Ads</image:title>
       <image:caption>Servicio de copywriting especializado en anuncios de Meta Ads para negocios en Chihuahua, Mexico</image:caption>
     </image:image>
