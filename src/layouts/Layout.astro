@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KONVERTO — Textos que convierten</title>
+    <meta name="description" content="Te reescribimos 2 ads gratis en 48h. Si convierten más, platicamos." />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              outfit: ['Outfit', 'sans-serif'],
+              'dm-sans': ['DM Sans', 'sans-serif'],
+            },
+            colors: {
+              lime: {
+                500: '#BFFF00',
+                dark: '#8FBF00',
+              },
+              dark: {
+                900: '#0A0A0A',
+                800: '#141414',
+                700: '#1E1E1E',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-[#0A0A0A] text-[#F5F5F0] font-['DM_Sans'] overflow-x-hidden">
+    <slot />
+  </body>
+</html>
