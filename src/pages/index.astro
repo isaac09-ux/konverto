@@ -2,7 +2,7 @@
 import SpeedInsights from '@vercel/speed-insights/astro';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,20 +38,56 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest">
 
+<!-- PWA / Apple / Microsoft -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KONVERTO">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-TileColor" content="#080808">
+<meta name="msapplication-config" content="none">
+
+<!-- Facebook Business Open Graph (categorias de negocio) -->
+<meta property="og:email" content="konverto.ads@gmail.com">
+<meta property="og:phone_number" content="+526145468144">
+<meta property="og:locality" content="Chihuahua">
+<meta property="og:region" content="Chihuahua">
+<meta property="og:country-name" content="Mexico">
+
+<!-- Datos adicionales para indexadores -->
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta name="language" content="Spanish">
+<meta name="category" content="Marketing Digital, Copywriting, Publicidad, Meta Ads">
+<meta name="classification" content="Business">
+<meta name="coverage" content="Mexico">
+<meta name="distribution" content="Global">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload imagen critica de la cofundadora (above-the-fold en seccion quien) -->
+<link rel="preload" as="image" href="/klara-voss.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <script type="application/ld+json" is:inline>
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "Organization",
       "@id": "https://konverto.vercel.app/#organization",
       "name": "KONVERTO",
-      "alternateName": ["Konverto", "KONVERTO Copywriting", "Konverto Ads"],
+      "alternateName": ["Konverto", "KONVERTO Copywriting", "Konverto Ads", "Konverto Mexico"],
       "url": "https://konverto.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://konverto.vercel.app/favicon.svg",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://konverto.vercel.app/klara-voss.jpg",
       "description": "Servicio de copywriting especializado en anuncios de Facebook e Instagram (Meta Ads) para negocios locales en Mexico. Convertimos clics en clientes con textos publicitarios que venden.",
+      "foundingDate": "2024",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 2 },
       "areaServed": [
         { "@type": "Country", "name": "Mexico" },
         { "@type": "City", "name": "Chihuahua" }
@@ -66,11 +102,13 @@ import SpeedInsights from '@vercel/speed-insights/astro';
         "@type": "ContactPoint",
         "telephone": "+52-614-546-8144",
         "contactType": "sales",
-        "availableLanguage": "Spanish"
+        "availableLanguage": "Spanish",
+        "contactOption": "TollFree",
+        "areaServed": "MX"
       },
       "founder": [
-        { "@type": "Person", "name": "Daniel", "jobTitle": "Estrategia & Copy" },
-        { "@type": "Person", "name": "Klara Voss", "jobTitle": "Vision & Branding" }
+        { "@id": "https://konverto.vercel.app/#daniel" },
+        { "@id": "https://konverto.vercel.app/#klara-voss" }
       ],
       "knowsAbout": [
         "copywriting", "copywriting publicitario", "copy para anuncios",
@@ -79,12 +117,57 @@ import SpeedInsights from '@vercel/speed-insights/astro';
         "publicidad en redes sociales", "textos publicitarios",
         "marketing digital", "conversion de anuncios",
         "redaccion publicitaria", "copy que convierte",
-        "publicidad para negocios locales", "ads para pymes mexico"
+        "publicidad para negocios locales", "ads para pymes mexico",
+        "anuncios pagados", "paid social", "conversion rate optimization",
+        "persuasion copywriting", "direct response copywriting"
       ],
       "sameAs": [
         "https://wa.me/526145468144"
       ]
     },
+
+    {
+      "@type": "Person",
+      "@id": "https://konverto.vercel.app/#daniel",
+      "name": "Daniel",
+      "givenName": "Daniel",
+      "jobTitle": "Estrategia & Copy",
+      "description": "Emprendedor de Chihuahua. Lleva anos invirtiendo su propio dinero en Meta Ads para su negocio. Creo KONVERTO porque vio que la mayoria de los negocios locales tienen buenos productos pero pesimos anuncios.",
+      "worksFor": { "@id": "https://konverto.vercel.app/#organization" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chihuahua",
+        "addressRegion": "Chihuahua",
+        "addressCountry": "MX"
+      },
+      "knowsAbout": [
+        "copywriting para anuncios", "facebook ads", "instagram ads",
+        "meta ads", "marketing digital", "publicidad digital",
+        "anuncios de pago", "negocios locales", "emprendimiento"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://konverto.vercel.app/#klara-voss",
+      "name": "Klara Voss",
+      "givenName": "Klara",
+      "familyName": "Voss",
+      "jobTitle": "Vision & Branding",
+      "description": "Raices alemanas, base en Mexico. Especialista en branding, estrategia de marca y cierre de clientes. Aporta vision internacional al servicio de copywriting de KONVERTO.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://konverto.vercel.app/klara-voss.jpg",
+        "width": 800,
+        "height": 800
+      },
+      "worksFor": { "@id": "https://konverto.vercel.app/#organization" },
+      "knowsAbout": [
+        "branding", "estrategia de marca", "copywriting",
+        "marketing digital", "vision estrategica", "cierre de ventas"
+      ]
+    },
+
     {
       "@type": "WebSite",
       "@id": "https://konverto.vercel.app/#website",
@@ -92,126 +175,266 @@ import SpeedInsights from '@vercel/speed-insights/astro';
       "alternateName": "Konverto - Copywriting para Ads",
       "url": "https://konverto.vercel.app/",
       "inLanguage": "es-MX",
-      "publisher": { "@id": "https://konverto.vercel.app/#organization" }
+      "publisher": { "@id": "https://konverto.vercel.app/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://konverto.vercel.app/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
+
     {
       "@type": "WebPage",
       "@id": "https://konverto.vercel.app/#webpage",
       "url": "https://konverto.vercel.app/",
       "name": "KONVERTO — Copywriting para Facebook e Instagram Ads | Chihuahua, MX",
-      "description": "Servicio de copywriting especializado en anuncios de Facebook e Instagram. Mejoramos el texto de tus Meta Ads para convertir clics en clientes.",
+      "description": "Servicio de copywriting especializado en anuncios de Facebook e Instagram. Mejoramos el texto de tus Meta Ads para convertir clics en clientes. Prueba gratis de 2 anuncios.",
       "isPartOf": { "@id": "https://konverto.vercel.app/#website" },
       "about": { "@id": "https://konverto.vercel.app/#organization" },
-      "inLanguage": "es-MX"
+      "inLanguage": "es-MX",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-03-03",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://konverto.vercel.app/"
+          }
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-headline", ".hero-sub", ".section-title"]
+      }
     },
+
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": "https://konverto.vercel.app/#service",
       "name": "KONVERTO Copywriting para Ads",
       "description": "Servicio profesional de copywriting para anuncios de Facebook e Instagram. Reescribimos y optimizamos los textos de tus Meta Ads para que cada peso invertido en publicidad genere mas clientes. Especialistas en negocios locales en Chihuahua y todo Mexico.",
       "provider": { "@id": "https://konverto.vercel.app/#organization" },
-      "areaServed": { "@type": "Country", "name": "Mexico" },
+      "url": "https://konverto.vercel.app/",
+      "telephone": "+52-614-546-8144",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chihuahua",
+        "addressRegion": "Chihuahua",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Mexico" },
+        { "@type": "City", "name": "Chihuahua" }
+      ],
       "serviceType": "Copywriting para publicidad digital",
+      "priceRange": "$$$",
+      "currenciesAccepted": "MXN",
+      "paymentAccepted": "Transferencia bancaria, PayPal",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Paquetes de Copywriting KONVERTO",
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Basico",
-            "description": "8 textos de anuncio optimizados para Facebook e Instagram con 1 ronda de ajustes y entrega en 48 horas.",
+            "name": "Paquete Basico de Copywriting",
+            "description": "8 textos de anuncio optimizados para Facebook e Instagram con 1 ronda de ajustes y entrega en 48 horas. Sin permanencia.",
             "price": "3500",
             "priceCurrency": "MXN",
+            "url": "https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico%20de%20KONVERTO",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "price": "3500",
               "priceCurrency": "MXN",
               "unitText": "mes"
-            }
+            },
+            "eligibleRegion": { "@type": "Country", "name": "Mexico" }
           },
           {
             "@type": "Offer",
-            "name": "Pro",
-            "description": "16 textos de anuncio optimizados, copy para landing page, ajustes ilimitados y analisis de rendimiento.",
+            "name": "Paquete Pro de Copywriting",
+            "description": "16 textos de anuncio optimizados, copy para landing page, ajustes ilimitados y analisis de rendimiento del ad anterior. Sin permanencia.",
             "price": "6500",
             "priceCurrency": "MXN",
+            "url": "https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Pro%20de%20KONVERTO",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "price": "6500",
               "priceCurrency": "MXN",
               "unitText": "mes"
-            }
+            },
+            "eligibleRegion": { "@type": "Country", "name": "Mexico" }
           },
           {
             "@type": "Offer",
-            "name": "Premium",
-            "description": "Textos ilimitados para anuncios, landing page, copy para WhatsApp, estrategia de campana completa y reporte mensual.",
+            "name": "Paquete Premium de Copywriting",
+            "description": "Textos ilimitados para anuncios, landing page, copy para WhatsApp, estrategia de campana completa, prioridad de respuesta 24h y reporte mensual de rendimiento. Sin permanencia.",
             "price": "12000",
             "priceCurrency": "MXN",
+            "url": "https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Premium%20de%20KONVERTO",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "price": "12000",
               "priceCurrency": "MXN",
               "unitText": "mes"
-            }
+            },
+            "eligibleRegion": { "@type": "Country", "name": "Mexico" }
           }
         ]
       }
     },
+
+    {
+      "@type": "HowTo",
+      "@id": "https://konverto.vercel.app/#proceso",
+      "name": "Como mejorar los textos de tus anuncios de Facebook e Instagram con KONVERTO",
+      "description": "Proceso simple de 4 pasos para obtener copywriting profesional que convierte para tus Meta Ads. Entrega en 48 horas.",
+      "totalTime": "PT48H",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "MXN",
+        "value": "0",
+        "minValue": "0"
+      },
+      "supply": [
+        { "@type": "HowToSupply", "name": "Tus anuncios actuales de Facebook o Instagram" },
+        { "@type": "HowToSupply", "name": "Descripcion de tu negocio y cliente ideal" }
+      ],
+      "tool": [
+        { "@type": "HowToTool", "name": "WhatsApp" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Diagnostico",
+          "text": "Analizamos tus ads actuales, tu negocio y tu cliente ideal. 15 minutos por WhatsApp, sin compromiso.",
+          "url": "https://konverto.vercel.app/#proceso"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Estrategia",
+          "text": "Definimos el angulo de comunicacion, el gancho emocional y el llamado a la accion correcto para tu negocio.",
+          "url": "https://konverto.vercel.app/#proceso"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Entrega en 48 horas",
+          "text": "Recibes tu copy listo para publicar en menos de 48 horas. Varias versiones para que pruebes cual jala mas.",
+          "url": "https://konverto.vercel.app/#proceso"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Ajuste sin costo",
+          "text": "Si el anuncio necesita ajuste despues de publicarse, lo modificamos sin costo extra. Hasta que funcione.",
+          "url": "https://konverto.vercel.app/#proceso"
+        }
+      ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://konverto.vercel.app/#ejemplos",
+      "name": "Ejemplos de Copy Antes y Despues — KONVERTO",
+      "description": "Demostraciones reales de como KONVERTO transforma el texto de anuncios de Facebook e Instagram para gimnasios, clinicas dentales, restaurantes e inmobiliarias.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Copy transformado para Gimnasio — Antes y Despues",
+          "description": "De 'Tenemos equipos modernos' a copy con urgencia y prueba social: '47 personas empezaron asi este mes. Vas a ser el 48?'. Resultado: mayor tasa de respuesta en anuncios de gimnasio en Facebook."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Copy transformado para Clinica Dental — Antes y Despues",
+          "description": "De listado generico de servicios a copy emocional con escasez: '3 lugares disponibles esta semana'. Anuncio de clinica dental optimizado para Instagram Ads."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Copy transformado para Restaurante — Antes y Despues",
+          "description": "De informacion basica de horarios a copy con conexion emocional: 'El tipo de comida que tu abuela hacia'. Copy para anuncio de restaurante con urgencia y lenguaje natural."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Copy transformado para Inmobiliaria — Antes y Despues",
+          "description": "De descripcion de propiedades a copy con beneficio familiar y urgencia de precio: 'El precio sube el proximo trimestre'. Copy para anuncios inmobiliarios en Chihuahua."
+        }
+      ]
+    },
+
     {
       "@type": "FAQPage",
       "@id": "https://konverto.vercel.app/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Que es exactamente copy y por que importa?",
+          "name": "¿Que es exactamente copy para anuncios y por que importa para mis Meta Ads?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Copy es el texto que aparece en tu anuncio — el titulo, la descripcion, el boton. Es lo primero que lee tu posible cliente antes de decidir si te manda mensaje o pasa de largo. Un buen producto con un mal anuncio pierde ventas todos los dias."
+            "text": "Copy es el texto que aparece en tu anuncio de Facebook o Instagram — el titulo, la descripcion, el boton. Es lo primero que lee tu posible cliente antes de decidir si te manda mensaje o pasa de largo. Un buen producto con un mal anuncio pierde ventas todos los dias. El copywriting profesional es la diferencia entre un anuncio que genera clientes y uno que solo gasta tu presupuesto."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Ustedes manejan mis anuncios completos?",
+          "name": "¿KONVERTO maneja mis campanas de Facebook o Instagram completas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. KONVERTO se enfoca exclusivamente en el texto de tus anuncios. No manejamos presupuestos, diseno ni redes sociales. Esa especializacion es la que nos permite hacer copy que realmente convierte. Si necesitas que alguien maneje toda tu campana, una agencia full-service seria mejor opcion — pero el texto, te lo mejoramos nosotros."
+            "text": "No. KONVERTO se enfoca exclusivamente en el texto de tus anuncios (copywriting). No manejamos presupuestos, diseno grafico ni redes sociales. Esa especializacion es la que nos permite hacer copy que realmente convierte. Si necesitas que alguien maneje toda tu campana, una agencia full-service seria mejor opcion — pero el texto de tus anuncios, te lo mejoramos nosotros."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Como se si va a funcionar para mi tipo de negocio?",
+          "name": "¿El copywriting de KONVERTO funciona para cualquier tipo de negocio local?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Los principios de copy que convierte aplican a cualquier negocio local: gimnasios, dentistas, inmobiliarias, restaurantes, escuelas, talleres. Si vendes algo y anuncias en Facebook o Instagram, podemos mejorar tus textos. Y la prueba gratis de 2 ads es exactamente para eso — que veas la diferencia antes de pagar."
+            "text": "Los principios de copy que convierte aplican a cualquier negocio local en Mexico: gimnasios, dentistas, inmobiliarias, restaurantes, escuelas, talleres, clinicas esteticas, academias, tiendas. Si vendes algo y anuncias en Facebook o Instagram, podemos mejorar tus textos. La prueba gratis de 2 ads es exactamente para eso — que veas la diferencia antes de pagar."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Tengo que firmar contrato?",
+          "name": "¿Hay que firmar contrato o permanencia minima con KONVERTO?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Los paquetes mensuales se renuevan mes a mes. Si un mes no quieres continuar, no continuas. Asi de simple. No hay permanencia minima, penalizaciones ni letra chiquita."
+            "text": "No. Los paquetes mensuales de KONVERTO se renuevan mes a mes. Si un mes no quieres continuar, no continuas. Sin permanencia minima, sin penalizaciones, sin letra chiquita. Puedes cancelar en cualquier momento."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cuanto tarda en llegar mi copy?",
+          "name": "¿En cuanto tiempo recibo mi copy para anuncios?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "48 horas maximo desde que nos das la informacion de tu negocio y tus ads actuales. Si necesitas ajustes despues, se entregan en 24 horas adicionales."
+            "text": "48 horas maximo desde que nos das la informacion de tu negocio y tus ads actuales por WhatsApp. Si necesitas ajustes despues de revisar el copy, se entregan en 24 horas adicionales sin costo extra."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por que no contratar una agencia completa?",
+          "name": "¿Por que contratar KONVERTO en lugar de una agencia de marketing completa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Puedes. Una agencia de marketing en Chihuahua cobra $8,000 a $25,000 al mes por manejar tus ads — y el copy es solo una parte de todo eso. Con KONVERTO empiezas desde $3,500/mes enfocado exclusivamente en lo que mas impacto tiene: el texto que lee tu cliente antes de decidir si te contacta o no. Si ya tienes a alguien que maneja tus campanas, somos el complemento perfecto: nosotros escribimos, ellos publican."
+            "text": "Una agencia de marketing en Chihuahua cobra entre $8,000 y $25,000 al mes por manejar tus ads — y el copywriting es solo una parte de todo eso. Con KONVERTO empiezas desde $3,500 MXN al mes enfocado exclusivamente en lo que mas impacto tiene: el texto que lee tu cliente antes de decidir si te contacta. Si ya tienes a alguien que maneja tus campanas, somos el complemento perfecto: nosotros escribimos, ellos publican."
           }
         }
       ]
     }
+
   ]
 }
 </script>
@@ -1922,15 +2145,16 @@ footer {
 
   <div class="founders-grid">
     <!-- DANIEL -->
-    <div class="founder-card reveal">
+    <div class="founder-card reveal" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="url" content="https://konverto.vercel.app/#daniel">
       <div class="founder-photo-placeholder" id="danielPhoto">
         <div class="founder-initial">D</div>
         <div class="founder-photo-hint">Foto próximamente</div>
       </div>
       <div class="founder-info">
-        <div class="founder-name">Daniel</div>
-        <div class="founder-role">Estrategia & Copy</div>
-        <div class="founder-bio">
+        <div class="founder-name" itemprop="name">Daniel</div>
+        <div class="founder-role" itemprop="jobTitle">Estrategia & Copy</div>
+        <div class="founder-bio" itemprop="description">
           Emprendedor de Chihuahua. Lleva años invirtiendo su propio dinero en Meta Ads para su negocio. No es un teórico — sabe lo que se siente cuando gastas en publicidad y no ves resultados. Creó KONVERTO porque vio que la mayoría de los negocios locales tienen buenos productos pero pésimos anuncios.
         </div>
         <div class="founder-stats-row">
@@ -1947,14 +2171,15 @@ footer {
     </div>
 
     <!-- KLARA -->
-    <div class="founder-card reveal reveal-delay-1">
+    <div class="founder-card reveal reveal-delay-1" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="url" content="https://konverto.vercel.app/#klara-voss">
       <div class="founder-photo-placeholder" id="klaraPhoto">
-        <img src="/klara-voss.jpg" alt="Klara Voss — Cofundadora de KONVERTO">
+        <img src="/klara-voss.jpg" alt="Klara Voss — Cofundadora de KONVERTO, Vision y Branding" itemprop="image">
       </div>
       <div class="founder-info">
-        <div class="founder-name">Klara Voss</div>
-        <div class="founder-role">Visión & Branding</div>
-        <div class="founder-bio">
+        <div class="founder-name" itemprop="name">Klara Voss</div>
+        <div class="founder-role" itemprop="jobTitle">Visión & Branding</div>
+        <div class="founder-bio" itemprop="description">
           Raíces alemanas, base en México. Le da un toque internacional a todo lo que toca. Es la que ve el panorama grande — el branding con punch, la estrategia que cierra deals, y el carisma que convence clientes difíciles. No le tiembla la mano para pivotar una estrategia a media noche si los números no cuadran. Café negro a las 6am, cero reuniones eternas, solo resultados.
         </div>
         <div class="founder-stats-row">
@@ -1981,59 +2206,59 @@ footer {
   <div class="section-tag reveal">Preguntas frecuentes</div>
   <h2 class="section-title reveal reveal-delay-1">Lo que siempre<br>nos preguntan.</h2>
 
-  <div class="faq-grid">
-    <div class="faq-item reveal">
-      <button class="faq-question">
+  <div class="faq-grid" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Qué es exactamente "copy" y por qué importa?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">Copy es el texto que aparece en tu anuncio — el título, la descripción, el botón. Es lo primero que lee tu posible cliente antes de decidir si te manda mensaje o pasa de largo. Un buen producto con un mal anuncio pierde ventas todos los días.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">Copy es el texto que aparece en tu anuncio — el título, la descripción, el botón. Es lo primero que lee tu posible cliente antes de decidir si te manda mensaje o pasa de largo. Un buen producto con un mal anuncio pierde ventas todos los días.</div>
       </div>
     </div>
-    <div class="faq-item reveal reveal-delay-1">
-      <button class="faq-question">
+    <div class="faq-item reveal reveal-delay-1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Y ustedes no manejan mis anuncios completos?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">No. KONVERTO se enfoca exclusivamente en el texto de tus anuncios. No manejamos presupuestos, diseño ni redes sociales. Esa especialización es la que nos permite hacer copy que realmente convierte. Si necesitas que alguien maneje toda tu campaña, una agencia full-service sería mejor opción — pero el texto, te lo mejoramos nosotros.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">No. KONVERTO se enfoca exclusivamente en el texto de tus anuncios. No manejamos presupuestos, diseño ni redes sociales. Esa especialización es la que nos permite hacer copy que realmente convierte. Si necesitas que alguien maneje toda tu campaña, una agencia full-service sería mejor opción — pero el texto, te lo mejoramos nosotros.</div>
       </div>
     </div>
-    <div class="faq-item reveal reveal-delay-1">
-      <button class="faq-question">
+    <div class="faq-item reveal reveal-delay-1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Cómo sé que va a funcionar para mi tipo de negocio?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">Los principios de copy que convierte aplican a cualquier negocio local: gimnasios, dentistas, inmobiliarias, restaurantes, escuelas, talleres. Si vendes algo y anuncias en Facebook o Instagram, podemos mejorar tus textos. Y la prueba gratis de 2 ads es exactamente para eso — que veas la diferencia antes de pagar.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">Los principios de copy que convierte aplican a cualquier negocio local: gimnasios, dentistas, inmobiliarias, restaurantes, escuelas, talleres. Si vendes algo y anuncias en Facebook o Instagram, podemos mejorar tus textos. Y la prueba gratis de 2 ads es exactamente para eso — que veas la diferencia antes de pagar.</div>
       </div>
     </div>
-    <div class="faq-item reveal reveal-delay-2">
-      <button class="faq-question">
+    <div class="faq-item reveal reveal-delay-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Tengo que firmar contrato?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">No. Los paquetes mensuales se renuevan mes a mes. Si un mes no quieres continuar, no continúas. Así de simple. No hay permanencia mínima, penalizaciones ni letra chiquita.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">No. Los paquetes mensuales se renuevan mes a mes. Si un mes no quieres continuar, no continúas. Así de simple. No hay permanencia mínima, penalizaciones ni letra chiquita.</div>
       </div>
     </div>
-    <div class="faq-item reveal reveal-delay-2">
-      <button class="faq-question">
+    <div class="faq-item reveal reveal-delay-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Cuánto tarda en llegar mi copy?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">48 horas máximo desde que nos das la información de tu negocio y tus ads actuales. Si necesitas ajustes después, se entregan en 24 horas adicionales.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">48 horas máximo desde que nos das la información de tu negocio y tus ads actuales. Si necesitas ajustes después, se entregan en 24 horas adicionales.</div>
       </div>
     </div>
-    <div class="faq-item reveal reveal-delay-3">
-      <button class="faq-question">
+    <div class="faq-item reveal reveal-delay-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-question" itemprop="name">
         ¿Por qué no contratar una agencia completa?
         <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-answer">
-        <div class="faq-answer-text">Puedes. Una agencia de marketing en Chihuahua cobra $8,000 a $25,000 al mes por manejar tus ads — y el copy es solo una parte de todo eso. Con KONVERTO empiezas desde $3,500/mes enfocado exclusivamente en lo que más impacto tiene: el texto que lee tu cliente antes de decidir si te contacta o no. Si ya tienes a alguien que maneja tus campañas, somos el complemento perfecto: nosotros escribimos, ellos publican.</div>
+      <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer-text" itemprop="text">Puedes. Una agencia de marketing en Chihuahua cobra $8,000 a $25,000 al mes por manejar tus ads — y el copy es solo una parte de todo eso. Con KONVERTO empiezas desde $3,500/mes enfocado exclusivamente en lo que más impacto tiene: el texto que lee tu cliente antes de decidir si te contacta o no. Si ya tienes a alguien que maneja tus campañas, somos el complemento perfecto: nosotros escribimos, ellos publican.</div>
       </div>
     </div>
   </div>
