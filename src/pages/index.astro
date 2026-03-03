@@ -79,6 +79,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── CUSTOM CURSOR ── */
@@ -1353,14 +1355,75 @@ footer {
   .nav-cta.desktop-only { display: none; }
   .hamburger { display: flex; }
   .hero { padding: 120px 28px 64px; }
-  .hero-headline { font-size: clamp(40px, 10vw, 64px); letter-spacing: -2px; }
-  .hero-sub { font-size: 16px; max-width: 100%; margin-top: 32px; }
+  .hero-headline {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    letter-spacing: -2px;
+    line-height: 1.02;
+    max-width: 22ch;
+    text-align: left;
+  }
+  .hero-sub {
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin-top: 32px;
+    line-height: 1.75;
+    text-align: left;
+  }
   .hero-actions { margin-top: 40px; gap: 20px; }
-  .hero-proof { margin-top: 64px; padding-top: 24px; }
+  .hero-proof { margin-top: 64px; padding-top: 24px; gap: 24px; }
+  .proof-item { line-height: 1.7; max-width: 32rem; }
   section, .oferta-section, .quien-section, .faq-section, .precios-section { padding: 88px 28px; }
   .section-title { font-size: clamp(32px, 8vw, 48px); letter-spacing: -1.5px; }
   .problema-grid { grid-template-columns: 1fr; gap: 48px; }
-  .problema-copy p { font-size: 16px; }
+  .problema-copy p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 24px;
+    max-width: 32rem;
+    text-align: left;
+  }
+  .problema-list { gap: 8px; }
+  .problema-item { padding: 24px 0; }
+  .problema-text { font-size: 1.125rem; line-height: 1.7; }
+  .ad-intro p,
+  .case-text,
+  .step-desc,
+  .precio-desc,
+  .precio-features li,
+  .garantia-text,
+  .founder-bio,
+  .faq-answer-text,
+  .cta-sub,
+  .quien-bottom p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    max-width: 32rem;
+    text-align: left;
+  }
+  .faq-question { font-size: 1.125rem; line-height: 1.6; text-align: left; }
+  .oferta-section,
+  .cta-final,
+  .garantia,
+  .quien-bottom,
+  .ad-intro,
+  .cases-note { text-align: left; }
+  .oferta-title,
+  .oferta-sub,
+  .cta-title,
+  .cta-sub,
+  .section-title,
+  .oferta-note {
+    max-width: 32rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+  .oferta-sub { font-size: 1.125rem; line-height: 1.75; margin-bottom: 24px; }
+  .oferta-points { gap: 24px; flex-direction: column; align-items: flex-start; margin: 40px 0 48px; }
+  .oferta-point { font-size: 1.125rem; line-height: 1.6; }
+  .cta-final .section-tag { justify-content: flex-start; }
+  .cta-steps { align-items: flex-start; gap: 24px; }
+  .cta-step { font-size: 1.125rem; line-height: 1.6; }
   .cases-grid { grid-template-columns: 1fr; }
   .case-body { grid-template-columns: 1fr; }
   .case-before { border-right: none; border-bottom: 1px solid var(--dark3); }
@@ -1375,10 +1438,9 @@ footer {
   .precio-vs-divider { width: 100%; height: 40px; }
   .garantia { padding: 72px 28px; }
   .garantia-inner { flex-direction: column; text-align: center; gap: 28px; }
-  .hero-proof { gap: 20px; flex-wrap: wrap; }
+  .hero-proof { flex-wrap: wrap; }
   .oferta-section { padding: 88px 28px; }
   .oferta-title { font-size: clamp(28px, 7vw, 44px); }
-  .oferta-points { gap: 16px; flex-direction: column; align-items: center; }
   .quien-section { padding: 88px 28px; }
   .quien-grid { grid-template-columns: 1fr; gap: 40px; }
   .founders-grid { grid-template-columns: 1fr; }
@@ -1387,7 +1449,7 @@ footer {
   .faq-section { padding: 88px 28px; }
   .cta-final { padding: 100px 28px; }
   .cta-title { letter-spacing: -1.5px; font-size: clamp(32px, 9vw, 56px); }
-  .cta-steps { gap: 20px; flex-direction: column; align-items: center; }
+  .cta-steps { flex-direction: column; }
   footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 28px; }
   .hero-scroll { display: none; }
   body { cursor: auto; }
@@ -1398,6 +1460,23 @@ footer {
   .hero { padding: 110px 20px 56px; }
   .hero-headline { font-size: clamp(36px, 11vw, 52px); letter-spacing: -1.5px; }
   .hero-tag { margin-bottom: 28px; }
+  .hero-sub,
+  .problema-copy p,
+  .ad-intro p,
+  .case-text,
+  .step-desc,
+  .precio-desc,
+  .precio-features li,
+  .garantia-text,
+  .founder-bio,
+  .faq-answer-text,
+  .faq-question,
+  .cta-sub,
+  .quien-bottom p,
+  .oferta-sub,
+  .oferta-point,
+  .cta-step,
+  .problema-text { font-size: 1.05rem; }
   .proceso-steps { grid-template-columns: 1fr; }
   .hero-proof { flex-direction: column; gap: 14px; border-top: none; padding-top: 0; margin-top: 56px; }
   section, .oferta-section, .quien-section, .faq-section, .precios-section { padding: 72px 20px; }
