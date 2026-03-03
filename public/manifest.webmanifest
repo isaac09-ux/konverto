@@ -1,12 +1,13 @@
 {
-  "name": "KONVERTO",
+  "name": "KONVERTO - Copywriting para Facebook e Instagram Ads",
   "short_name": "KONVERTO",
-  "description": "Copy para ads que convierten en Meta Ads.",
+  "description": "Servicio de copywriting especializado en anuncios de Facebook e Instagram (Meta Ads). Convertimos clics en clientes para negocios en Chihuahua y Mexico.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#080808",
   "theme_color": "#080808",
   "lang": "es-MX",
+  "categories": ["business", "marketing", "productivity"],
   "icons": [
     {
       "src": "/favicon.svg",
