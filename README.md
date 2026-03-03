@@ -1,81 +1,101 @@
-# KONVERTO
+Markdown# KONVERTO
 
-Landing page de KONVERTO construida con [Astro](https://astro.build).
+<div align="center">
+  <img src="https://konverto-alpha.vercel.app/konverto-logo.svg" alt="KONVERTO" width="420">
+  
+  <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -2px; color: #BFFF00;">
+    Textos que convierten.
+  </h2>
 
-## Estructura del repositorio
+  <p><strong>Landing page oficial de KONVERTO</strong> — Agencia de copywriting para ads potenciada con IA.</p>
 
-- `src/pages/index.astro`: página principal.
-- `public/`: assets estáticos (favicon, manifest, imágenes, service worker, SEO files).
-- `.github/workflows/astro.yml`: workflow de CI para validar y compilar el proyecto.
-- `vercel.json`: configuración de despliegue en Vercel.
+  **[Ver en vivo →](https://konverto-alpha.vercel.app)**
+</div>
 
-## Comandos
+<br>
+
+## ¿Qué es KONVERTO?
+
+Te reescribimos **2 anuncios GRATIS** en 48 horas.  
+Si convierten más → platicamos.  
+Si no → te los quedas y no pagas nada.
+
+Copy directo, sin rodeos, diseñado para negocios locales en Chihuahua y todo México.
+
+---
+
+## ✨ Características
+
+- Diseño 100% fiel a la **Brand Identity Guide** (Febrero 2026)
+- Hero impactante con efecto glow lime
+- Sección Antes/Después ultra visual
+- Precios transparentes y garantía real
+- Optimizada para móvil (mobile-first)
+- Carga ultra-rápida (< 1s) gracias a Astro
+- Despliegue automático en Vercel
+
+---
+
+## 🛠 Tech Stack
+
+- **[Astro 5](https://astro.build)** — Framework todo en uno
+- **Tailwind CSS** — Estilos premium
+- **Outfit + DM Sans** — Tipografía oficial de la marca
+- **Vercel** — Hosting + CI/CD
+- **TypeScript** — Tipado fuerte
+- **GitHub Actions** — Validación automática
+
+---
+
+## 🚀 Comandos
 
 ```bash
+# Instalar dependencias
 npm install
+
+# Desarrollar localmente
 npm run dev
+
+# Validar tipos y código
+npm run check
+
+# Construir para producción
+npm run build
+
+# Previsualizar build
+npm run preview
+
+📁 Estructura del proyecto
+textkonverto/
+├── src/
+│   ├── components/     # Hero, BeforeAfterCard, PricingCard, etc.
+│   ├── layouts/        # Layout base
+│   └── pages/
+│       └── index.astro # Página principal
+├── public/             # Imágenes, favicon, manifest
+├── .github/workflows/  # CI con Astro
+├── astro.config.mjs
+├── tailwind.config.js
+└── vercel.json
+
+🔄 CI / CD
+Cada push a main ejecuta automáticamente:
+
+npm install
 npm run check
 npm run build
-npm run preview
+
+Si todo pasa → se despliega en Vercel.
+
+🚀 Despliegue en Vercel
+Ya configurado. Solo conecta tu repo de GitHub a Vercel y listo.
+Bash# Agregar adapter de Vercel (solo la primera vez)
 npx astro add vercel
-```
 
-## CI
+🎨 Brand Identity
+Todo el diseño sigue fielmente la KONVERTO Brand Identity Guide (Febrero 2026):
 
-El workflow de GitHub Actions ejecuta:
-
-1. `npm install`
-2. `npm run check`
-3. `npm run build`
-
-Así se valida que cada cambio compile correctamente antes de desplegar.
-
-## Revisión del abstract técnico (copywriting)
-
-Se incluye una versión corregida para evitar inconsistencias matemáticas y de redacción.
-
-```latex
-\begin{abstract}
-This document presents a mathematical formalization of direct-response copywriting principles within an optimization framework, with the objective of minimizing conversion friction while maximizing user engagement.
-
-\section{Stochastic Analysis of Copywriting Effectiveness}
-Landing-page performance can be modeled through the conversion-probability function $P(C\mid E, R, V)$, influenced by the following parameters:
-
-$$
-P(C\mid E, R, V) = \frac{\exp(\beta_0 + \beta_1 V - \beta_2 R + \mathbf{\beta_3}^\top E + \epsilon)}{1 + \exp(\beta_0 + \beta_1 V - \beta_2 R + \mathbf{\beta_3}^\top E + \epsilon)}
-$$
-
-where $V$ is the value proposition (perceived utility), $R$ is user resistance (friction points, textual complexity, and cognitive load), $E$ is a vector of environmental factors, $\beta_1$, $\beta_2$, and $\mathbf{\beta_3}$ are empirically estimated weights for the target demographic, and $\epsilon$ is stochastic error.
-
-\subsection{Information Entropy and Landing-Page Clarity}
-The informational complexity of a paragraph is defined using Shannon entropy $H(X)$:
-
-$$
-H(X) = -\sum_{i=1}^{n} p(x_i)\log_b\bigl(p(x_i)\bigr)
-$$
-
-In conversion-oriented typography and layout, $H(X)$ should be minimized for core value propositions, targeting the bounded regime:
-
-$$
-L_1 < H(X_{vp}) \leq L_{opt},
-$$
-
-which is expected to correlate with improved scannability.
-\end{abstract}
-```
-
-## Why Astro Vercel?
-
-Vercel is a deployment platform that allows you to host your site by connecting directly to your GitHub repository. This adapter enhances the Astro build process to prepare your project for deployment through Vercel.
-
-### Installation
-
-Astro includes an `astro add` command to automate the setup of official integrations. If you prefer, you can install integrations manually instead.
-
-Add the Vercel adapter to enable on-demand rendering in your Astro project with the following `astro add` command. This will install `@astrojs/vercel` and make the appropriate changes to your `astro.config.mjs` file in one step.
-
-**npm**
-
-```bash
-npx astro add vercel
-```
+Color primario: Lime #BFFF00
+Tipografía: Outfit 900 (títulos) + DM Sans (cuerpo)
+Logo siempre en MAYÚSCULAS
+K acentuada en lime
