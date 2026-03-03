@@ -466,6 +466,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── CUSTOM CURSOR ── */
@@ -658,7 +660,7 @@ nav {
   margin-top: 44px;
   font-size: 18px;
   color: var(--gray2);
-  max-width: 540px;
+  max-width: 780px;
   line-height: 1.75;
   font-weight: 300;
   opacity: 0;
@@ -703,6 +705,27 @@ nav {
   transition: color 0.2s, border-color 0.2s;
 }
 .btn-ghost:hover { color: var(--white); border-color: var(--white); }
+
+.hero-scroll-down {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray2);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+.hero-scroll-down:hover {
+  color: var(--lime);
+  transform: translateY(2px);
+}
+
+.hero-microcopy {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--gray2);
+  letter-spacing: 0.2px;
+}
 
 /* Hero proof strip */
 .hero-proof {
@@ -1719,14 +1742,75 @@ footer {
   .nav-cta.desktop-only { display: none; }
   .hamburger { display: flex; }
   .hero { padding: 120px 28px 64px; }
-  .hero-headline { font-size: clamp(40px, 10vw, 64px); letter-spacing: -2px; }
-  .hero-sub { font-size: 16px; max-width: 100%; margin-top: 32px; }
+  .hero-headline {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    letter-spacing: -2px;
+    line-height: 1.02;
+    max-width: 22ch;
+    text-align: left;
+  }
+  .hero-sub {
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin-top: 32px;
+    line-height: 1.75;
+    text-align: left;
+  }
   .hero-actions { margin-top: 40px; gap: 20px; }
-  .hero-proof { margin-top: 64px; padding-top: 24px; }
+  .hero-proof { margin-top: 64px; padding-top: 24px; gap: 24px; }
+  .proof-item { line-height: 1.7; max-width: 32rem; }
   section, .oferta-section, .quien-section, .faq-section, .precios-section { padding: 88px 28px; }
   .section-title { font-size: clamp(32px, 8vw, 48px); letter-spacing: -1.5px; }
   .problema-grid { grid-template-columns: 1fr; gap: 48px; }
-  .problema-copy p { font-size: 16px; }
+  .problema-copy p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 24px;
+    max-width: 32rem;
+    text-align: left;
+  }
+  .problema-list { gap: 8px; }
+  .problema-item { padding: 24px 0; }
+  .problema-text { font-size: 1.125rem; line-height: 1.7; }
+  .ad-intro p,
+  .case-text,
+  .step-desc,
+  .precio-desc,
+  .precio-features li,
+  .garantia-text,
+  .founder-bio,
+  .faq-answer-text,
+  .cta-sub,
+  .quien-bottom p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    max-width: 32rem;
+    text-align: left;
+  }
+  .faq-question { font-size: 1.125rem; line-height: 1.6; text-align: left; }
+  .oferta-section,
+  .cta-final,
+  .garantia,
+  .quien-bottom,
+  .ad-intro,
+  .cases-note { text-align: left; }
+  .oferta-title,
+  .oferta-sub,
+  .cta-title,
+  .cta-sub,
+  .section-title,
+  .oferta-note {
+    max-width: 32rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+  .oferta-sub { font-size: 1.125rem; line-height: 1.75; margin-bottom: 24px; }
+  .oferta-points { gap: 24px; flex-direction: column; align-items: flex-start; margin: 40px 0 48px; }
+  .oferta-point { font-size: 1.125rem; line-height: 1.6; }
+  .cta-final .section-tag { justify-content: flex-start; }
+  .cta-steps { align-items: flex-start; gap: 24px; }
+  .cta-step { font-size: 1.125rem; line-height: 1.6; }
   .cases-grid { grid-template-columns: 1fr; }
   .case-body { grid-template-columns: 1fr; }
   .case-before { border-right: none; border-bottom: 1px solid var(--dark3); }
@@ -1741,10 +1825,9 @@ footer {
   .precio-vs-divider { width: 100%; height: 40px; }
   .garantia { padding: 72px 28px; }
   .garantia-inner { flex-direction: column; text-align: center; gap: 28px; }
-  .hero-proof { gap: 20px; flex-wrap: wrap; }
+  .hero-proof { flex-wrap: wrap; }
   .oferta-section { padding: 88px 28px; }
   .oferta-title { font-size: clamp(28px, 7vw, 44px); }
-  .oferta-points { gap: 16px; flex-direction: column; align-items: center; }
   .quien-section { padding: 88px 28px; }
   .quien-grid { grid-template-columns: 1fr; gap: 40px; }
   .founders-grid { grid-template-columns: 1fr; }
@@ -1753,7 +1836,7 @@ footer {
   .faq-section { padding: 88px 28px; }
   .cta-final { padding: 100px 28px; }
   .cta-title { letter-spacing: -1.5px; font-size: clamp(32px, 9vw, 56px); }
-  .cta-steps { gap: 20px; flex-direction: column; align-items: center; }
+  .cta-steps { flex-direction: column; }
   footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 28px; }
   .hero-scroll { display: none; }
   body { cursor: auto; }
@@ -1764,6 +1847,23 @@ footer {
   .hero { padding: 110px 20px 56px; }
   .hero-headline { font-size: clamp(36px, 11vw, 52px); letter-spacing: -1.5px; }
   .hero-tag { margin-bottom: 28px; }
+  .hero-sub,
+  .problema-copy p,
+  .ad-intro p,
+  .case-text,
+  .step-desc,
+  .precio-desc,
+  .precio-features li,
+  .garantia-text,
+  .founder-bio,
+  .faq-answer-text,
+  .faq-question,
+  .cta-sub,
+  .quien-bottom p,
+  .oferta-sub,
+  .oferta-point,
+  .cta-step,
+  .problema-text { font-size: 1.05rem; }
   .proceso-steps { grid-template-columns: 1fr; }
   .hero-proof { flex-direction: column; gap: 14px; border-top: none; padding-top: 0; margin-top: 56px; }
   section, .oferta-section, .quien-section, .faq-section, .precios-section { padding: 72px 20px; }
@@ -1786,7 +1886,7 @@ footer {
   <a href="#proceso" onclick="window.closeMenu()">Proceso</a>
   <a href="#precios" onclick="window.closeMenu()">Precios</a>
   <a href="#faq" onclick="window.closeMenu()">Preguntas</a>
-  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="nav-cta" onclick="window.closeMenu()">Prueba gratis →</a>
+  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mis%202%20anuncios%20gratis" target="_blank" class="nav-cta" onclick="window.closeMenu()">Prueba gratis →</a>
 </div>
 
 <!-- NAV -->
@@ -1800,7 +1900,7 @@ footer {
     <li><a href="#precios">Precios</a></li>
     <li><a href="#faq">Preguntas</a></li>
   </ul>
-  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="nav-cta desktop-only">Prueba gratis →</a>
+  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mis%202%20anuncios%20gratis" target="_blank" class="nav-cta desktop-only">Prueba gratis →</a>
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
@@ -1816,39 +1916,25 @@ footer {
   <div class="hero-tag">Copywriting para ads</div>
 
   <h1 class="hero-headline">
-    Te reescribimos<br>2 anuncios<br><em>gratis.</em>
+    Tus anuncios reciben likes...<br><strong>pero tu WhatsApp sigue en silencio.</strong>
   </h1>
 
   <p class="hero-sub">
-    Si nuestro copy convierte más que el tuyo, platicamos. Si no, te quedas con los textos y no pagas nada. Así de simple.
+    Dejar de tirar dinero en Meta Ads es más fácil de lo que crees. Reescribimos <strong>2 de tus anuncios GRATIS</strong> en 48 horas. Tú los pruebas; si venden más, hablamos. Si no, te los quedas sin pagar un peso.
   </p>
 
   <div class="hero-actions">
-    <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="btn-primary">
+    <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mis%202%20anuncios%20gratis" target="_blank" class="btn-primary">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Quiero mi prueba gratis
+      QUIERO MIS 2 ANUNCIOS GRATIS
     </a>
-    <a href="#resultados" class="btn-ghost">Ver ejemplos</a>
+    <a href="#problema" class="hero-scroll-down" aria-label="Bajar a la siguiente sección">↓ Scroll suave</a>
   </div>
-
-  <div class="hero-proof">
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      Sin contrato ni compromiso
-    </div>
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Entrega en 48 horas
-    </div>
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Ajustes sin costo extra
-    </div>
-  </div>
+  <p class="hero-microcopy">Sin contratos forzosos · Sin tarjetas · Resultados en 48h.</p>
 
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    Scroll
+    ↓
   </div>
 </section>
 
@@ -1873,31 +1959,31 @@ footer {
   <div class="section-tag reveal">El problema</div>
   <div class="problema-grid">
     <div class="problema-copy reveal reveal-delay-1">
-      <h2 class="section-title" style="margin-bottom:32px;">Tu negocio es bueno.<br>Tus anuncios<br>no lo demuestran.</h2>
+      <h2 class="section-title" style="margin-bottom:32px;">Tu negocio es excelente.<br>Tu Copy lo está matando.</h2>
       <p>
-        Estás invirtiendo en publicidad. Los anuncios se publican. Pero el teléfono no suena. <strong>El problema no es tu presupuesto — es el texto.</strong>
+        Estás pagando publicidad todos los meses y el teléfono no suena. El problema no es tu presupuesto, ni el algoritmo... <strong>es que tus anuncios dicen lo mismo que todos.</strong>
       </p>
       <br>
       <p>
-        El 80% de los anuncios locales dicen lo mismo: "los mejores precios", "la mejor calidad", "ven a visitarnos". Tu cliente ya vio eso 50 veces hoy. <strong>Las palabras correctas hacen que actúe. Eso es exactamente lo que hacemos.</strong>
+        En Chihuahua, el 80% de los negocios usan las mismas frases vacías: "Calidad garantizada", "Los mejores precios", "Visítanos". Tu cliente ya es inmune a eso. <strong>Nosotros escribimos las palabras exactas que hacen que tu cliente deje de hacer scroll, sienta curiosidad y te escriba. Eso es lo único que hacemos.</strong>
       </p>
     </div>
     <div class="problema-list reveal reveal-delay-2">
       <div class="problema-item">
         <div class="problema-x"><svg viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="problema-text">Tu anuncio recibe likes pero nadie te manda mensaje ni llama</div>
+        <div class="problema-text">Recibes "Me gusta" pero cero prospectos reales.</div>
       </div>
       <div class="problema-item">
         <div class="problema-x"><svg viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="problema-text">Gastas en ads cada mes pero no sabes qué cambiar para que funcionen</div>
+        <div class="problema-text">Gastas en Ads y no sabes qué moverle para que jale.</div>
       </div>
       <div class="problema-item">
         <div class="problema-x"><svg viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="problema-text">Tus anuncios suenan igual que los de tu competencia directa</div>
+        <div class="problema-text">Tu competencia se ve igual (o mejor) que tú con menos presupuesto.</div>
       </div>
       <div class="problema-item">
         <div class="problema-x"><svg viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="problema-text">No tienes tiempo de aprender copywriting y manejar tu negocio al mismo tiempo</div>
+        <div class="problema-text">No tienes tiempo de ser experto en marketing y además operar tu negocio.</div>
       </div>
     </div>
   </div>
@@ -1906,118 +1992,91 @@ footer {
 <!-- ANTES / DESPUÉS -->
 <section class="antes-despues" id="resultados">
   <div class="ad-intro">
-    <div class="section-tag reveal">La diferencia</div>
-    <h2 class="section-title reveal reveal-delay-1">Copy genérico vs.<br>copy que convierte.</h2>
-    <p class="reveal reveal-delay-2">La diferencia no está en cuánto gastas en el anuncio. Está en las palabras que usa. Aquí puedes ver los dos estilos lado a lado.</p>
+    <div class="section-tag reveal">La prueba</div>
+    <h2 class="section-title reveal reveal-delay-1">Antes vs. Después</h2>
+    <p class="reveal reveal-delay-2">El Error (Antes) vs El Gancho (Después) en negocios reales de Chihuahua.</p>
   </div>
 
   <div class="cases-grid">
-
-    <!-- CASO 1: Gimnasio -->
     <div class="case-card reveal">
       <div class="case-header">
         <span class="case-niche">Gimnasio</span>
-        <span class="case-badge">Demostración</span>
+        <span class="case-badge">Comparativa</span>
       </div>
       <div class="case-body">
         <div class="case-before">
-          <div class="case-label"><span class="dot dot-red"></span>Antes</div>
-          <div class="case-text">🏋️ ¡Únete a nuestro gym! Tenemos equipos modernos, clases grupales y precios accesibles. ¡Ven a conocernos! Membresía desde $599/mes.</div>
+          <div class="case-label"><span class="dot dot-red"></span>El Error (Antes)</div>
+          <div class="case-text">"¡Únete ya! Equipos modernos y regaderas. Mensualidad $599."</div>
         </div>
         <div class="case-after">
-          <div class="case-label"><span class="dot dot-green"></span>Después</div>
-          <div class="case-text">Llevas meses diciendo "mañana empiezo." Hoy ya no. Primera semana completamente gratis, sin tarjeta, sin excusas. 47 personas empezaron así este mes. ¿Vas a ser el 48?</div>
+          <div class="case-label"><span class="dot dot-green"></span>El Gancho (Después)</div>
+          <div class="case-text">"Llevas meses diciendo 'mañana empiezo'. Hoy se acabaron las excusas. 1ª semana GRATIS."</div>
         </div>
       </div>
     </div>
 
-    <!-- CASO 2: Dental -->
     <div class="case-card reveal reveal-delay-1">
       <div class="case-header">
-        <span class="case-niche">Clínica Dental</span>
-        <span class="case-badge">Demostración</span>
+        <span class="case-niche">Dental</span>
+        <span class="case-badge">Comparativa</span>
       </div>
       <div class="case-body">
         <div class="case-before">
-          <div class="case-label"><span class="dot dot-red"></span>Antes</div>
-          <div class="case-text">Clínica Dental con más de 10 años de experiencia. Atención personalizada, tecnología de punta. ¡Agenda tu cita hoy! Consulta desde $200.</div>
+          <div class="case-label"><span class="dot dot-red"></span>El Error (Antes)</div>
+          <div class="case-text">"Clínica con 10 años de experiencia. Agenda tu cita. Consulta $200."</div>
         </div>
         <div class="case-after">
-          <div class="case-label"><span class="dot dot-green"></span>Después</div>
-          <div class="case-text">¿Cuándo fue la última vez que sonreíste sin taparte la boca? Blanqueamiento + limpieza profunda en una sola cita. Esta semana tenemos 3 lugares disponibles.</div>
+          <div class="case-label"><span class="dot dot-green"></span>El Gancho (Después)</div>
+          <div class="case-text">"¿Cuándo fue la última vez que sonreíste sin taparte la boca? Blanqueamiento y limpieza hoy mismo."</div>
         </div>
       </div>
     </div>
 
-    <!-- CASO 3: Restaurante -->
     <div class="case-card reveal">
       <div class="case-header">
-        <span class="case-niche">Restaurante</span>
-        <span class="case-badge">Demostración</span>
-      </div>
-      <div class="case-body">
-        <div class="case-before">
-          <div class="case-label"><span class="dot dot-red"></span>Antes</div>
-          <div class="case-text">🍽️ ¡Visítanos! Deliciosa comida casera con los mejores ingredientes. Ambiente familiar. Abierto de lunes a domingo de 8am a 10pm.</div>
-        </div>
-        <div class="case-after">
-          <div class="case-label"><span class="dot dot-green"></span>Después</div>
-          <div class="case-text">El tipo de comida que tu abuela hacía, pero no tienes que esperar el domingo. Porciones que llenan, precios que no duelen. Hoy hay lugar, mañana no sabemos.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASO 4: Inmobiliaria -->
-    <div class="case-card reveal reveal-delay-1">
-      <div class="case-header">
         <span class="case-niche">Inmobiliaria</span>
-        <span class="case-badge">Demostración</span>
+        <span class="case-badge">Comparativa</span>
       </div>
       <div class="case-body">
         <div class="case-before">
-          <div class="case-label"><span class="dot dot-red"></span>Antes</div>
-          <div class="case-text">Hermosas casas en las mejores zonas de Chihuahua. Precios competitivos y facilidades de pago. Contáctanos para más información.</div>
+          <div class="case-label"><span class="dot dot-red"></span>El Error (Antes)</div>
+          <div class="case-text">"Casas en preventa. Excelente ubicación y enganche bajo. Llama ya."</div>
         </div>
         <div class="case-after">
-          <div class="case-label"><span class="dot dot-green"></span>Después</div>
-          <div class="case-text">Tu familia lleva 3 años esperando la casa propia. Zona Norte, enganche desde $50k. El precio sube el próximo trimestre — los que se mueven hoy, ahorran mañana.</div>
+          <div class="case-label"><span class="dot dot-green"></span>El Gancho (Después)</div>
+          <div class="case-text">"Tu familia lleva 3 años esperando casa propia. Zona Norte, enganche desde $50k. El precio sube en 30 días."</div>
         </div>
       </div>
     </div>
-
   </div>
-  <p class="cases-note reveal">Demostraciones basadas en anuncios reales de negocios locales. Los resultados varían según industria y presupuesto.</p>
+  <p class="cases-note reveal">Ejemplos de estructura de copy para fines demostrativos. Los resultados varían.</p>
 </section>
 
 <!-- OFERTA GANCHO -->
 <div class="oferta-section" id="oferta">
   <div class="oferta-glow"></div>
   <div class="oferta-badge reveal">Oferta sin compromiso</div>
-  <h2 class="oferta-title reveal reveal-delay-1">Te reescribimos <em>2 anuncios gratis.</em><br>Tú comparas.</h2>
+  <h2 class="oferta-title reveal reveal-delay-1">Te doy 2 anuncios GRATIS.<br><em>Tú decides.</em></h2>
   <p class="oferta-sub reveal reveal-delay-2">
-    Mandanos tus ads actuales. Te regresamos versiones mejoradas en 48 horas. Si te convence el resultado, platicamos de trabajar juntos. Si no, te quedas con los textos y listo.
+    Mándame tus ads actuales por WhatsApp. En 48 horas te regreso versiones mucho más fuertes. Si te encantan → platicamos. Si no → chau, te quedas con los textos gratis.
   </p>
   <div class="oferta-points reveal reveal-delay-2">
-    <div class="oferta-point">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      No pagas nada
-    </div>
     <div class="oferta-point">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
       Sin contrato
     </div>
     <div class="oferta-point">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      Entrega en 48h
+      Sin tarjeta
     </div>
     <div class="oferta-point">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      Te quedas con los textos
+      Sin rodeos
     </div>
   </div>
-  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="oferta-cta reveal reveal-delay-3">
+  <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mis%202%20anuncios%20gratis" target="_blank" class="oferta-cta reveal reveal-delay-3">
     <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Quiero mi prueba gratis →
+    Quiero mis 2 anuncios GRATIS →
   </a>
   <p class="oferta-note reveal reveal-delay-3">Respuesta en menos de 24 horas por WhatsApp</p>
 </div>
@@ -2025,31 +2084,31 @@ footer {
 <!-- PROCESO -->
 <section class="proceso" id="proceso">
   <div class="section-tag reveal">Cómo trabajamos</div>
-  <h2 class="section-title reveal reveal-delay-1">Simple. Rápido.<br>Sin rodeos.</h2>
+  <h2 class="section-title reveal reveal-delay-1">Simple. Rápido.<br>Resultados.</h2>
   <div class="proceso-steps">
     <div class="step reveal">
       <div class="step-accent"></div>
       <div class="step-num">01</div>
       <div class="step-title">Diagnóstico</div>
-      <div class="step-desc">Analizamos tus ads actuales, tu negocio y tu cliente ideal. 15 minutos por WhatsApp, sin compromiso.</div>
+      <div class="step-desc">Analizamos tus anuncios actuales por WhatsApp en 15 minutos.</div>
     </div>
     <div class="step reveal reveal-delay-1">
       <div class="step-accent"></div>
       <div class="step-num">02</div>
       <div class="step-title">Estrategia</div>
-      <div class="step-desc">Definimos el ángulo de comunicación, el gancho emocional y el llamado a la acción correcto para tu negocio.</div>
+      <div class="step-desc">Definimos por qué tu cliente no está dando clic y qué ángulo lo hace reaccionar.</div>
     </div>
     <div class="step reveal reveal-delay-2">
       <div class="step-accent"></div>
       <div class="step-num">03</div>
       <div class="step-title">Entrega</div>
-      <div class="step-desc">Recibes tu copy listo para publicar en menos de 48 horas. Varias versiones para que pruebes cuál jala más.</div>
+      <div class="step-desc">Recibes tus versiones listas para copiar y pegar en menos de 48 horas.</div>
     </div>
     <div class="step reveal reveal-delay-3">
       <div class="step-accent"></div>
       <div class="step-num">04</div>
       <div class="step-title">Ajuste</div>
-      <div class="step-desc">Si el anuncio necesita ajuste después de publicarse, lo modificamos sin costo extra. Hasta que funcione.</div>
+      <div class="step-desc">Si no ves mejoría, lo ajustamos hasta que los mensajes empiecen a llegar.</div>
     </div>
   </div>
 </section>
@@ -2057,14 +2116,14 @@ footer {
 <!-- PRECIOS -->
 <section class="precios-section" id="precios">
   <div class="section-tag reveal">Inversión</div>
-  <h2 class="section-title reveal reveal-delay-1">Sin letras chiquitas.<br>Sin sorpresas.</h2>
+  <h2 class="section-title reveal reveal-delay-1">Sin letras chiquitas.<br>Sin agencias lentas.</h2>
 
   <div class="precio-comparison reveal reveal-delay-1">
     <div class="precio-vs">
       <div class="precio-vs-item bad">
-        <div class="precio-vs-label">Agencia promedio en Chihuahua</div>
+        <div class="precio-vs-label">Agencia tradicional en Chihuahua</div>
         <div class="precio-vs-amount">$8,000 — $25,000<span>/mes</span></div>
-        <div class="precio-vs-note">Contratos de 3-6 meses · Copy es solo una parte</div>
+        <div class="precio-vs-note">Contrato de 3-6 meses · Copy es solo el 20%</div>
       </div>
       <div class="precio-vs-divider">VS</div>
       <div class="precio-vs-item good">
@@ -2079,47 +2138,44 @@ footer {
 
     <div class="precio-card">
       <div class="precio-name">Básico</div>
-      <div class="precio-desc">Para negocios que quieren probar el poder del copy sin comprometerse a largo plazo.</div>
+      <div class="precio-desc">Ideal para validar tu oferta.</div>
       <div class="precio-num"><sup>$</sup>3,500<span class="precio-slash">/mes</span></div>
       <div class="precio-period">MXN · sin permanencia</div>
       <ul class="precio-features">
-        <li>8 textos de anuncio optimizados</li>
-        <li>Facebook + Instagram</li>
-        <li>1 ronda de ajustes por anuncio</li>
-        <li>Entrega en 48 horas</li>
+        <li>8 textos optimizados (FB + IG)</li>
+        <li>Entrega en 48h</li>
+        <li>Análisis de métricas semanal</li>
       </ul>
-      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-ghost">Empezar con Básico →</a>
+      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-ghost">Elegir Básico</a>
     </div>
 
     <div class="precio-card featured">
       <div class="precio-tag-featured">RECOMENDADO</div>
       <div class="precio-name">Pro</div>
-      <div class="precio-desc">Para negocios que ya invierten en ads y necesitan copy que convierta cada mes.</div>
+      <div class="precio-desc">Para quien ya invierte y quiere escalar.</div>
       <div class="precio-num"><sup>$</sup>6,500<span class="precio-slash">/mes</span></div>
       <div class="precio-period">MXN · sin permanencia</div>
       <ul class="precio-features">
-        <li>16 textos de anuncio optimizados</li>
-        <li>Copy para tu landing page</li>
-        <li>Ajustes ilimitados</li>
-        <li>Facebook + Instagram</li>
-        <li>Análisis de rendimiento del ad anterior</li>
+        <li>16 textos al mes</li>
+        <li>Textos + Copy para Landing</li>
+        <li>Análisis de métricas semanal</li>
+        <li>Ajustes estratégicos</li>
       </ul>
-      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Pro%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-solid">Empezar con Pro →</a>
+      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Pro%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-solid">Elegir PRO</a>
     </div>
 
     <div class="precio-card">
       <div class="precio-name">Premium</div>
-      <div class="precio-desc">Para negocios que escalan agresivamente y necesitan copy constante en todos los canales.</div>
+      <div class="precio-desc">Tu departamento de Copy externo.</div>
       <div class="precio-num"><sup>$</sup>12,000<span class="precio-slash">/mes</span></div>
       <div class="precio-period">MXN · sin permanencia</div>
       <ul class="precio-features">
-        <li>Textos ilimitados para anuncios</li>
-        <li>Landing page + copy para WhatsApp</li>
-        <li>Estrategia de campaña completa</li>
-        <li>Prioridad de respuesta 24h</li>
-        <li>Reporte mensual de rendimiento</li>
+        <li>Textos ilimitados</li>
+        <li>Textos ilimitados + Estrategia completa</li>
+        <li>Reporte mensual</li>
+        <li>Atención VIP</li>
       </ul>
-      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Premium%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-ghost">Empezar con Premium →</a>
+      <a href="https://wa.me/526145468144?text=Hola%2C%20me%20interesa%20el%20paquete%20Premium%20de%20KONVERTO" target="_blank" class="btn-precio btn-precio-ghost">Elegir Premium</a>
     </div>
 
   </div>
@@ -2130,9 +2186,9 @@ footer {
   <div class="garantia-inner reveal">
     <div class="garantia-icon">🔒</div>
     <div>
-      <h3 class="garantia-title">No te gusta → <span>te lo reescribimos.</span></h3>
+      <h3 class="garantia-title">No te gusta → <span>te lo reescribimos sin costo.</span></h3>
       <p class="garantia-text">
-        Todo copy que entregamos incluye ajustes sin costo adicional. Si después de publicar el anuncio no funciona como esperabas, lo revisamos, te decimos por qué y lo corregimos. Sin letras chiquitas, sin excusas, sin "eso ya no entra en el paquete."
+        Si después de publicar no funciona, lo revisamos y corregimos. Punto.
       </p>
     </div>
   </div>
@@ -2141,7 +2197,7 @@ footer {
 <!-- QUIÉNES ESTÁN DETRÁS -->
 <section class="quien-section" id="quien">
   <div class="section-tag reveal">Quiénes somos</div>
-  <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 60px;">Dos personas.<br>Un solo enfoque.</h2>
+  <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 60px;">Los "locos" detrás de KONVERTO</h2>
 
   <div class="founders-grid">
     <!-- DANIEL -->
@@ -2156,6 +2212,10 @@ footer {
         <div class="founder-role" itemprop="jobTitle">Estrategia & Copy</div>
         <div class="founder-bio" itemprop="description">
           Emprendedor de Chihuahua. Lleva años invirtiendo su propio dinero en Meta Ads para su negocio. No es un teórico — sabe lo que se siente cuando gastas en publicidad y no ves resultados. Creó KONVERTO porque vio que la mayoría de los negocios locales tienen buenos productos pero pésimos anuncios.
+        <div class="founder-name">Daniel</div>
+        <div class="founder-role">Estrategia & Copy</div>
+        <div class="founder-bio">
+          Estratega que ha gastado su propio dinero en Ads por 3 años. Sabe lo que duele perder un presupuesto que no convierte.
         </div>
         <div class="founder-stats-row">
           <div class="founder-stat">
@@ -2181,6 +2241,10 @@ footer {
         <div class="founder-role" itemprop="jobTitle">Visión & Branding</div>
         <div class="founder-bio" itemprop="description">
           Raíces alemanas, base en México. Le da un toque internacional a todo lo que toca. Es la que ve el panorama grande — el branding con punch, la estrategia que cierra deals, y el carisma que convence clientes difíciles. No le tiembla la mano para pivotar una estrategia a media noche si los números no cuadran. Café negro a las 6am, cero reuniones eternas, solo resultados.
+        <div class="founder-name">Klara Voss</div>
+        <div class="founder-role">Visión & Branding</div>
+        <div class="founder-bio">
+          Visión y Branding. Experta en que tu marca no solo venda, sino que se vea profesional y genere confianza inmediata.
         </div>
         <div class="founder-stats-row">
           <div class="founder-stat">
@@ -2197,7 +2261,7 @@ footer {
   </div>
 
   <div class="quien-bottom reveal reveal-delay-2">
-    <p>No somos una agencia de 50 personas. Somos dos personas con una obsesión: <strong>que las cosas funcionen de verdad, no solo bonito en papel.</strong> Klara pone la visión y el branding con punch. Daniel entra en los detalles operativos y la ejecución. Juntos nos enfocamos en una sola cosa — el texto que hace que tu cliente haga clic. No manejamos redes, no hacemos diseño, no administramos campañas. Solo copywriting para ads.</p>
+    <p>No somos una agencia enorme con oficinas de lujo que tú terminas pagando. Somos dos especialistas obsesionados con la conversión.</p>
   </div>
 </section>
 
@@ -2259,6 +2323,32 @@ footer {
       </button>
       <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
         <div class="faq-answer-text" itemprop="text">Puedes. Una agencia de marketing en Chihuahua cobra $8,000 a $25,000 al mes por manejar tus ads — y el copy es solo una parte de todo eso. Con KONVERTO empiezas desde $3,500/mes enfocado exclusivamente en lo que más impacto tiene: el texto que lee tu cliente antes de decidir si te contacta o no. Si ya tienes a alguien que maneja tus campañas, somos el complemento perfecto: nosotros escribimos, ellos publican.</div>
+  <div class="faq-grid">
+    <div class="faq-item reveal">
+      <button class="faq-question">
+        ¿De verdad es gratis?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-text">Sí. Los primeros 2 anuncios son nuestra forma de demostrarte que sabemos lo que hacemos antes de que nos pagues un centavo.</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question">
+        ¿Ustedes montan los anuncios?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-text">Nosotros somos especialistas en Copy (el texto que vende). Te damos el material listo para que tú o tu equipo lo suban.</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question">
+        ¿Sirve para cualquier negocio?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-text">Si tu cliente está en Facebook, Instagram o Google, el copy es la clave. Hemos trabajado desde dentistas hasta constructoras.</div>
       </div>
     </div>
   </div>
@@ -2269,30 +2359,30 @@ footer {
   <div class="cta-glow"></div>
   <div class="section-tag reveal">Siguiente paso</div>
   <h2 class="cta-title reveal reveal-delay-1">¿Tus ads se ven como los<br>de la <em>izquierda?</em></h2>
-  <p class="cta-sub reveal reveal-delay-2">Mándanos tus anuncios actuales. Te regresamos la versión mejorada en 48 horas. Gratis.</p>
+  <p class="cta-sub reveal reveal-delay-2">No dejes que tu presupuesto se siga quemando. Mándanos tus anuncios actuales y te regresamos la Versión 2.0 en 48 horas. Gratis.</p>
 
   <div class="cta-steps reveal reveal-delay-2">
     <div class="cta-step">
       <div class="cta-step-num">1</div>
-      Nos escribes por WhatsApp
+      Mándanos WhatsApp.
     </div>
     <div class="cta-step">
       <div class="cta-step-num">2</div>
-      Nos mandas tus ads actuales
+      Envía tus anuncios.
     </div>
     <div class="cta-step">
       <div class="cta-step-num">3</div>
-      Recibes la versión mejorada en 48h
+      Recibe tus ventas.
     </div>
   </div>
 
   <div class="cta-actions reveal reveal-delay-3">
     <a href="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20KONVERTO" target="_blank" class="btn-primary">
       <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Quiero mi prueba gratis
+      QUIERO MI PRUEBA GRATIS AHORA
     </a>
   </div>
-  <p class="cta-note reveal reveal-delay-3">Sin compromiso · Sin contrato · Respuesta en menos de 24 horas</p>
+  <p class="cta-note reveal reveal-delay-3">Sin compromisos. Solo resultados.</p>
 </section>
 </main>
 
