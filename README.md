@@ -30,6 +30,40 @@ El workflow de GitHub Actions ejecuta:
 
 Así se valida que cada cambio compile correctamente antes de desplegar.
 
+## Revisión del abstract técnico (copywriting)
+
+Se incluye una versión corregida para evitar inconsistencias matemáticas y de redacción.
+
+```latex
+\begin{abstract}
+This document presents a mathematical formalization of direct-response copywriting principles within an optimization framework, with the objective of minimizing conversion friction while maximizing user engagement.
+
+\section{Stochastic Analysis of Copywriting Effectiveness}
+Landing-page performance can be modeled through the conversion-probability function $P(C\mid E, R, V)$, influenced by the following parameters:
+
+$$
+P(C\mid E, R, V) = \frac{\exp(\beta_0 + \beta_1 V - \beta_2 R + \mathbf{\beta_3}^\top E + \epsilon)}{1 + \exp(\beta_0 + \beta_1 V - \beta_2 R + \mathbf{\beta_3}^\top E + \epsilon)}
+$$
+
+where $V$ is the value proposition (perceived utility), $R$ is user resistance (friction points, textual complexity, and cognitive load), $E$ is a vector of environmental factors, $\beta_1$, $\beta_2$, and $\mathbf{\beta_3}$ are empirically estimated weights for the target demographic, and $\epsilon$ is stochastic error.
+
+\subsection{Information Entropy and Landing-Page Clarity}
+The informational complexity of a paragraph is defined using Shannon entropy $H(X)$:
+
+$$
+H(X) = -\sum_{i=1}^{n} p(x_i)\log_b\bigl(p(x_i)\bigr)
+$$
+
+In conversion-oriented typography and layout, $H(X)$ should be minimized for core value propositions, targeting the bounded regime:
+
+$$
+L_1 < H(X_{vp}) \leq L_{opt},
+$$
+
+which is expected to correlate with improved scannability.
+\end{abstract}
+```
+
 ## Why Astro Vercel?
 
 Vercel is a deployment platform that allows you to host your site by connecting directly to your GitHub repository. This adapter enhances the Astro build process to prepare your project for deployment through Vercel.
