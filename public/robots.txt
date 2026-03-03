@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://konverto.vercel.app/sitemap.xml
-Host: https://konverto.vercel.app
+Sitemap: https://konverto-alpha.vercel.app/sitemap.xml
+Host: https://konverto-alpha.vercel.app
