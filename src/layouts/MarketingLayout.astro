@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogType = 'article'
+} = Astro.props;
+
+const siteUrl = 'https://konverto.vercel.app';
+const canonical = `${siteUrl}${canonicalPath}`;
+const ogImage = `${siteUrl}/og-image.svg`;
+---
+
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es-MX" href={canonical} />
+    <link rel="alternate" hreflang="es" href={canonical} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="KONVERTO" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --lime: #BFFF00;
+    --dark: #0A0A0A;
+    --dark2: #101114;
+    --dark3: #1C1D21;
+    --white: #F2F2ED;
+    --gray2: #999;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 10% -20%, rgba(191,255,0,0.18), transparent 40%), var(--dark);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+  }
+
+  .back-link {
+    color: var(--gray2);
+    text-decoration: none;
+    font-size: .95rem;
+  }
+
+  .back-link:hover { color: var(--lime); }
+</style>

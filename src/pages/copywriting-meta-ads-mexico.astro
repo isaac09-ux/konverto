@@ -1,0 +1,44 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
+
+const title = 'Copywriting para Meta Ads en México | KONVERTO';
+const description = 'Copywriting especializado en anuncios de Facebook e Instagram para negocios en México. Más clics útiles, más mensajes y más ventas.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Copywriting para Meta Ads en México',
+  provider: {
+    '@type': 'Organization',
+    name: 'KONVERTO',
+    url: 'https://konverto.vercel.app/'
+  },
+  areaServed: { '@type': 'Country', name: 'México' },
+  serviceType: 'Copywriting para Facebook e Instagram Ads',
+  url: 'https://konverto.vercel.app/copywriting-meta-ads-mexico'
+};
+---
+
+<MarketingLayout title={title} description={description} canonicalPath="/copywriting-meta-ads-mexico">
+  <ServiceLanding
+    heading="Copywriting para Meta Ads en México"
+    lead="En publicidad digital, el texto define si una persona te compra o te ignora. En KONVERTO optimizamos el copy de tus anuncios para mejorar conversiones sin complicar tu operación."
+    includeTitle="Qué resolvemos"
+    includeItems={[
+      'Anuncios con muchos clics pero pocos mensajes.',
+      'Campañas con costo por resultado demasiado alto.',
+      'Mensajes genéricos que no conectan con el cliente ideal.',
+      'Falta de ángulos de venta para diferentes audiencias.'
+    ]}
+    focusTitle="Cómo trabajamos"
+    focusText="Analizamos tu oferta, identificamos objeciones frecuentes y redactamos anuncios con ganchos claros, beneficios concretos y llamados a la acción directos."
+    ctaTitle="Empieza con una prueba gratis"
+    ctaText="Reescribimos 2 anuncios sin costo para que evalúes calidad y enfoque antes de contratar un paquete mensual."
+    ctaHref="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20copywriting%20para%20Meta%20Ads"
+    ctaLabel="Pedir prueba por WhatsApp"
+    relatedHref="/servicio-copywriting-chihuahua"
+    relatedLabel="servicio de copywriting en Chihuahua"
+    schema={schema}
+  />
+</MarketingLayout>

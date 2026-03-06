@@ -20,6 +20,13 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 <meta name="geo.position" content="28.632996;-106.068889">
 <meta name="ICBM" content="28.632996, -106.068889">
 <link rel="canonical" href="https://konverto.vercel.app/">
+<link rel="alternate" hreflang="es-MX" href="https://konverto.vercel.app/">
+<link rel="alternate" hreflang="es" href="https://konverto.vercel.app/">
+<link rel="alternate" hreflang="x-default" href="https://konverto.vercel.app/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
@@ -1872,6 +1879,36 @@ footer {
   .oferta-cta { padding: 18px 32px; font-size: 15px; }
   .cta-final { padding: 80px 20px; }
 }
+
+.footer-seo-links {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-seo-links a {
+  color: var(--gray2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-seo-links a:hover {
+  color: var(--lime);
+  border-color: var(--lime);
+}
+
+@media (max-width: 768px) {
+  .footer-seo-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2391,6 +2428,10 @@ footer {
 <footer>
   <div class="footer-logo"><span>K</span>ONVERTO</div>
   <div class="footer-text">Chihuahua, México · © 2026</div>
+  <nav class="footer-seo-links" aria-label="Enlaces de servicios de copywriting">
+    <a href="/servicio-copywriting-chihuahua">Copywriting en Chihuahua</a>
+    <a href="/copywriting-meta-ads-mexico">Copy para Meta Ads en México</a>
+  </nav>
 </footer>
 
 <script>
