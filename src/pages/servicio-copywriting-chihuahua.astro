@@ -1,0 +1,44 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
+
+const title = 'Servicio de Copywriting en Chihuahua | KONVERTO';
+const description = 'Servicio de copywriting para anuncios en Chihuahua. Reescribimos tus Meta Ads para convertir más clientes con prueba gratis de 2 anuncios.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Servicio de Copywriting en Chihuahua',
+  provider: {
+    '@type': 'Organization',
+    name: 'KONVERTO',
+    url: 'https://konverto.vercel.app/'
+  },
+  areaServed: { '@type': 'City', name: 'Chihuahua' },
+  serviceType: 'Copywriting para anuncios de Facebook e Instagram',
+  url: 'https://konverto.vercel.app/servicio-copywriting-chihuahua'
+};
+---
+
+<MarketingLayout title={title} description={description} canonicalPath="/servicio-copywriting-chihuahua">
+  <ServiceLanding
+    heading="Servicio de copywriting en Chihuahua para anuncios que sí convierten"
+    lead="Si inviertes en Meta Ads y tus anuncios no generan mensajes de calidad, el problema suele estar en el texto. En KONVERTO corregimos ese punto exacto: el copy con enfoque a resultados locales."
+    includeTitle="¿Qué incluye nuestro servicio?"
+    includeItems={[
+      'Diagnóstico de anuncios actuales y propuesta de mejora.',
+      'Reescritura de anuncios para Facebook e Instagram.',
+      'Variantes de textos por intención: tráfico, mensajes o ventas.',
+      'Ajustes posteriores según respuesta del mercado.'
+    ]}
+    focusTitle="Negocios de Chihuahua donde más impacto vemos"
+    focusText="Gimnasios, clínicas dentales, restaurantes, inmobiliarias y comercios locales que ya invierten en pauta pero quieren más resultados sin subir presupuesto."
+    ctaTitle="Prueba gratis antes de pagar"
+    ctaText="Te damos 2 anuncios reescritos sin costo para que midas la diferencia."
+    ctaHref="https://wa.me/526145468144?text=Hola%2C%20quiero%20mi%20prueba%20gratis%20de%20copywriting%20en%20Chihuahua"
+    ctaLabel="Solicitar prueba gratis"
+    relatedHref="/copywriting-meta-ads-mexico"
+    relatedLabel="copywriting para Meta Ads en todo México"
+    schema={schema}
+  />
+</MarketingLayout>
