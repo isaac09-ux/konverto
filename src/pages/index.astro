@@ -441,19 +441,19 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 </script>
 <style>
 :root {
-  --lime: #BFFF00;
-  --lime-dim: rgba(191,255,0,0.12);
-  --lime-dim2: rgba(191,255,0,0.06);
-  --lime-glow: rgba(191,255,0,0.15);
-  --dark: #0A0A0A;
-  --dark2: #101114;
-  --dark3: #1C1D21;
-  --dark4: #2A2C31;
-  --dark5: #343741;
+  --lime: #0071e3;
+  --lime-dim: rgba(0,113,227,0.12);
+  --lime-dim2: rgba(0,113,227,0.06);
+  --lime-glow: rgba(0,113,227,0.16);
+  --dark: #f5f5f7;
+  --dark2: #fbfbfd;
+  --dark3: #d2d2d7;
+  --dark4: #86868b;
+  --dark5: #6e6e73;
   --lime-dark: #84AC00;
-  --white: #F2F2ED;
-  --gray: #666;
-  --gray2: #999;
+  --white: #1d1d1f;
+  --gray: #6e6e73;
+  --gray2: #515154;
   --red-dim: rgba(255,68,68,0.1);
 }
 
@@ -463,11 +463,10 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--dark);
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Segoe UI', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
-  -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -502,8 +501,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(20px);
-  background: rgba(8,8,8,0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.72);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .nav-logo {
@@ -514,7 +513,7 @@ nav {
   color: var(--white);
   text-decoration: none;
 }
-.nav-logo span { color: var(--lime); }
+.nav-logo span { color: var(--lime); font-weight: 700; }
 
 .nav-links {
   display: flex;
@@ -533,7 +532,7 @@ nav {
 
 .nav-cta {
   background: var(--lime);
-  color: var(--dark);
+  color: #fff;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -620,7 +619,7 @@ nav {
   right: -100px;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(191,255,0,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,113,227,0.10) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -683,7 +682,7 @@ nav {
   align-items: center;
   gap: 12px;
   background: var(--lime);
-  color: var(--dark);
+  color: #fff;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -850,7 +849,7 @@ section {
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse, rgba(191,255,0,0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0,113,227,0.09) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -917,7 +916,7 @@ section {
   align-items: center;
   gap: 12px;
   background: var(--lime);
-  color: var(--dark);
+  color: #fff;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -1549,7 +1548,7 @@ section {
   background: none;
   border: none;
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Segoe UI', sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-align: left;
@@ -1872,6 +1871,13 @@ footer {
   .oferta-cta { padding: 18px 32px; font-size: 15px; }
   .cta-final { padding: 80px 20px; }
 }
+
+.cursor,.cursor-ring,.hero-noise,.ticker{display:none !important;}
+.hero,.oferta-section,.precios-section,.quien-section,.faq-section,.cta-final{border-radius:28px; margin:20px; border:1px solid rgba(0,0,0,0.08); box-shadow:0 20px 60px rgba(0,0,0,0.06);}
+.hero{min-height:calc(100vh - 40px);}
+.btn-primary,.oferta-cta,.nav-cta{border-radius:999px; font-weight:600; box-shadow:0 6px 18px rgba(0,113,227,0.28);}
+.btn-ghost{border-bottom:none; color:var(--lime); font-weight:500;}
+.section-title,.hero-headline,.oferta-title{letter-spacing:-0.03em;}
 </style>
 </head>
 <body>
@@ -2470,3 +2476,12 @@ if ('serviceWorker' in navigator) {
 <SpeedInsights />
 </body>
 </html>
+
+<style is:inline>
+.cursor,.cursor-ring,.hero-noise,.ticker{display:none !important;}
+.hero,.oferta-section,.precios-section,.quien-section,.faq-section,.cta-final{border-radius:28px; margin:20px; border:1px solid rgba(0,0,0,0.08); box-shadow:0 20px 60px rgba(0,0,0,0.06);}
+.hero{min-height:calc(100vh - 40px);}
+.btn-primary,.oferta-cta,.nav-cta{border-radius:999px; font-weight:600; box-shadow:0 6px 18px rgba(0,113,227,0.28);}
+.btn-ghost{border-bottom:none; color:var(--lime); font-weight:500;}
+.section-title,.hero-headline,.oferta-title{letter-spacing:-0.03em;}
+</style>
