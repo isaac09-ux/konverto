@@ -3,16 +3,20 @@
   "short_name": "KONVERTO",
   "description": "Servicio de copywriting especializado en anuncios de Facebook e Instagram (Meta Ads). Convertimos clics en clientes para negocios en Chihuahua y Mexico.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#080808",
-  "theme_color": "#080808",
+  "orientation": "portrait",
+  "background_color": "#0A0A0B",
+  "theme_color": "#0A0A0B",
   "lang": "es-MX",
+  "dir": "ltr",
   "categories": ["business", "marketing", "productivity"],
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

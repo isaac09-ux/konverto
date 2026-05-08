@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://konverto.vercel.app/</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://konverto.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://konverto.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://konverto.vercel.app/" />
     <image:image>
       <image:loc>https://konverto.vercel.app/og-image.svg</image:loc>
       <image:title>KONVERTO - Copywriting para Facebook e Instagram Ads</image:title>
       <image:caption>Servicio de copywriting especializado en anuncios de Meta Ads para negocios en Chihuahua, Mexico</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://konverto.vercel.app/klara-voss.jpg</image:loc>
+      <image:title>Klara Voss - Cofundadora de KONVERTO</image:title>
+      <image:caption>Klara Voss, cofundadora de KONVERTO, especialista en branding y vision estrategica</image:caption>
     </image:image>
   </url>
 </urlset>

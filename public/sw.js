@@ -1,4 +1,4 @@
-const CACHE_NAME = 'konverto-v2';
+const CACHE_NAME = 'konverto-v3';
 const PRECACHE = [
   '/',
   '/favicon.svg',
