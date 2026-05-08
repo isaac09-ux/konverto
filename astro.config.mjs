@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://konverto-alpha.vercel.app',
+  site: 'https://konverto.vercel.app',
   integrations: [
     sitemap({
       // excluye páginas que no quieres indexar
